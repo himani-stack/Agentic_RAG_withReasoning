@@ -4,7 +4,6 @@ An **Agentic Retrieval-Augmented Generation (RAG) application** that enables use
 
 This project integrates **LLM reasoning, semantic search, and vector databases** to build an interactive AI assistant capable of retrieving relevant knowledge and generating contextual answers with **source citations**.
 
----
 
 # Features
 
@@ -15,7 +14,7 @@ This project integrates **LLM reasoning, semantic search, and vector databases**
 - Persistent vector storage using **LanceDB**
 - Prevents duplicate document ingestion using **session state tracking**
 
----
+
 
 ## Transparent Reasoning Process
 
@@ -25,7 +24,7 @@ This project integrates **LLM reasoning, semantic search, and vector databases**
   - final generated answer
 - Helps users understand how the AI arrives at conclusions
 
----
+
 
 ## Advanced RAG Capabilities
 
@@ -33,7 +32,7 @@ This project integrates **LLM reasoning, semantic search, and vector databases**
 - Efficient document retrieval from the knowledge base
 - **Source attribution and citations** for generated answers
 
----
+
 
 # Tech Stack
 
@@ -44,7 +43,7 @@ This project integrates **LLM reasoning, semantic search, and vector databases**
 - **Vector Database:** LanceDB  
 - **Language:** Python  
 
----
+
 
 # Architecture Overview
 
@@ -68,7 +67,7 @@ ReasoningTools enable the agent to perform **step-by-step analysis**.
 ### 6 Answer Generation
 Gemini 2.5 Flash generates the final response with **citations and context awareness**.
 
----
+
 
 # Prerequisites
 
@@ -81,7 +80,7 @@ https://aistudio.google.com/apikey
 
 2 Create a new API key.
 
----
+
 
 ## OpenAI API Key
 
@@ -90,7 +89,7 @@ https://platform.openai.com/
 
 2 Generate a new API key.
 
----
+
 
 # Installation
 
@@ -107,7 +106,6 @@ Install dependencies.
 pip install -r requirements.txt
 ```
 
----
 
 # Run the Application
 
@@ -117,7 +115,6 @@ Start the Streamlit app.
 streamlit run rag_reasoning_agent.py
 ```
 
----
 
 # Application Workflow
 
@@ -130,7 +127,6 @@ streamlit run rag_reasoning_agent.py
 7 View **reasoning process on the left panel**  
 8 View **final answer with citations on the right panel**
 
----
 
 # Project Structure
 
@@ -143,7 +139,6 @@ agentic-rag-reasoning
 └── data/
 ```
 
----
 
 # Future Improvements
 
@@ -153,13 +148,11 @@ agentic-rag-reasoning
 - Support for additional vector databases
 - User authentication
 
----
+
 
 # License
 
 MIT License
-
----
 
 # Acknowledgements
 
