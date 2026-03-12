@@ -1,109 +1,170 @@
-# 🧐 Agentic RAG with Reasoning
+# Agentic RAG System with Reasoning
 
-### 🎓 FREE Step-by-Step Tutorial 
-**👉 [Click here to follow our complete step-by-step tutorial](https://www.theunwindai.com/p/build-an-agentic-rag-app-with-reasoning) and learn how to build this from scratch with detailed code walkthroughs, explanations, and best practices.**
+An **Agentic Retrieval-Augmented Generation (RAG) application** that enables users to query dynamically added web knowledge sources while visualizing the AI agent’s **step-by-step reasoning process** in real time.
 
-A sophisticated RAG system that demonstrates an AI agent's step-by-step reasoning process using Agno, Gemini and OpenAI. This implementation allows users to add web sources, ask questions, and observe the agent's thought process in real-time with reasoning capabilities.
+This project integrates **LLM reasoning, semantic search, and vector databases** to build an interactive AI assistant capable of retrieving relevant knowledge and generating contextual answers with **source citations**.
 
+---
 
-## Features
+# Features
 
-1. Interactive Knowledge Base Management
-- Add URLs dynamically for web content
-- Default knowledge source: MCP vs A2A Protocol article
-- Persistent vector database storage using LanceDB
-- Session state tracking prevents duplicate URL loading
+## Interactive Knowledge Base Management
 
+- Dynamically add **web URLs** as knowledge sources
+- Default preloaded article: **MCP vs A2A Protocol**
+- Persistent vector storage using **LanceDB**
+- Prevents duplicate document ingestion using **session state tracking**
 
-2. Transparent Reasoning Process
-- Real-time display of the agent's thinking steps
-- Side-by-side view of reasoning and final answer
-- Clear visibility into the RAG process
+---
 
+## Transparent Reasoning Process
 
-3. Advanced RAG Capabilities
-- Vector search using OpenAI embeddings for semantic matching
-- Source attribution with citations
+- Displays the **agent’s reasoning steps in real time**
+- Side-by-side visualization of:
+  - reasoning process
+  - final generated answer
+- Helps users understand how the AI arrives at conclusions
 
+---
 
-## Agent Configuration
+## Advanced RAG Capabilities
 
-- Gemini 2.5 Flash for language processing
-- OpenAI embedding model for vector search
-- ReasoningTools for step-by-step analysis
-- Customizable agent instructions
-- Default knowledge source: MCP vs A2A Protocol article
+- **Semantic vector search** using OpenAI embeddings
+- Efficient document retrieval from the knowledge base
+- **Source attribution and citations** for generated answers
 
-## Prerequisites
+---
 
-You'll need the following API keys:
+# Tech Stack
 
-1. Google API Key
+- **Frontend:** Streamlit  
+- **Agent Framework:** Agno v2.0  
+- **Language Model:** Gemini 2.5 Flash  
+- **Embeddings:** OpenAI Embeddings  
+- **Vector Database:** LanceDB  
+- **Language:** Python  
 
-- Sign up at [aistudio.google.com](https://aistudio.google.com/apikey)
-- Navigate to API Keys section
-- Create a new API key
+---
 
-2. OpenAI API Key
+# Architecture Overview
 
-- Sign up at [platform.openai.com](https://platform.openai.com/)
-- Navigate to API Keys section
-- Generate a new API key
+The system follows a **Retrieval-Augmented Generation pipeline**.
 
-## How to Run
+### 1 Document Ingestion
+URLs are loaded using Agno’s Knowledge class and the content is chunked.
 
-1. **Clone the Repository**:
-    ```bash
-    git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
-    cd rag_tutorials/agentic_rag_with_reasoning
-    ```
+### 2 Embedding Generation
+Text chunks are converted into vector embeddings using OpenAI.
 
-2. **Install the dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
+### 3 Vector Storage
+Embeddings are stored in **LanceDB** for efficient retrieval.
 
-3. **Run the Application:**
-    ```bash
-    streamlit run rag_reasoning_agent.py
-    ```
+### 4 Semantic Retrieval
+User queries are embedded and the system retrieves the most relevant content.
 
-4. **Configure API Keys:**
+### 5 Agent Reasoning
+ReasoningTools enable the agent to perform **step-by-step analysis**.
 
-- Enter your Google API key in the first field
-- Enter your OpenAI API key in the second field
-- Both keys are required for the app to function
+### 6 Answer Generation
+Gemini 2.5 Flash generates the final response with **citations and context awareness**.
 
+---
 
-5. **Use the Application:**
+# Prerequisites
 
-- Default Knowledge Source: The app comes pre-loaded with the MCP vs A2A Protocol article
-- Add Knowledge Sources: Use the sidebar to add URLs to your knowledge base
-- Suggested Prompts: Click the prompt buttons (What is MCP?, MCP vs A2A, Agent Communication) for quick questions
-- Ask Questions: Enter queries in the main input field
-- View Reasoning: Watch the agent's thought process unfold in real-time in the left panel
-- Get Answers: Receive comprehensive responses with source citations in the right panel
+You need the following API keys.
 
-## How It Works
+## Google API Key
 
-The application uses a sophisticated RAG pipeline with Agno v2.0:
+1 Go to  
+https://aistudio.google.com/apikey
 
-### Knowledge Base Setup
-- Documents are loaded from URLs using Agno's Knowledge class
-- Text is automatically chunked and embedded using OpenAI's embedding model 
-- Vectors are stored in LanceDB for efficient retrieval
-- Vector search enables semantic matching for relevant information
-- URLs are tracked in session state to prevent duplicate loading
+2 Create a new API key.
 
-### Agent Processing
-- User queries trigger the agent's reasoning process
-- ReasoningTools help the agent think step-by-step
-- The agent searches the knowledge base for relevant information
-- Gemini 2.5 Flash generates comprehensive answers with citations
-- Streaming events provide real-time updates on reasoning and content
+---
 
-### UI Flow
-- Enter API keys → Knowledge base loads with default MCP vs A2A article → Use suggested prompts or ask custom questions
-- Reasoning process displayed in left panel, answer generation in right panel
-- Sources cited for transparency and verification
-- All events streamed in real-time for better user experience
+## OpenAI API Key
+
+1 Go to  
+https://platform.openai.com/
+
+2 Generate a new API key.
+
+---
+
+# Installation
+
+Clone the repository.
+
+```bash
+git clone https://github.com/YOUR_USERNAME/agentic-rag-reasoning.git
+cd agentic-rag-reasoning
+```
+
+Install dependencies.
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# Run the Application
+
+Start the Streamlit app.
+
+```bash
+streamlit run rag_reasoning_agent.py
+```
+
+---
+
+# Application Workflow
+
+1 Start the application  
+2 Enter **Google API key**  
+3 Enter **OpenAI API key**  
+4 Default knowledge source loads automatically  
+5 Add additional URLs to extend the knowledge base  
+6 Ask questions in the input field  
+7 View **reasoning process on the left panel**  
+8 View **final answer with citations on the right panel**
+
+---
+
+# Project Structure
+
+```
+agentic-rag-reasoning
+│
+├── rag_reasoning_agent.py
+├── requirements.txt
+├── README.md
+└── data/
+```
+
+---
+
+# Future Improvements
+
+- Support for **PDF uploads**
+- Multi-agent communication
+- Improved reasoning visualization
+- Support for additional vector databases
+- User authentication
+
+---
+
+# License
+
+MIT License
+
+---
+
+# Acknowledgements
+
+- Agno Framework
+- Google Gemini
+- OpenAI
+- LanceDB
+- Streamlit
